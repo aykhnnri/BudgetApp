@@ -1,0 +1,29 @@
+﻿@page
+@model BudgetApp.Areas.Identity.Pages.AddTransactionModel
+@{
+}
+
+<h2 class="mb-4">Add Transaction</h2>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Transaction.date" class="control-label">Date</label>
+            <input asp-for="Transaction.date" class="form-control" type="date" />
+            <span asp-validation-for="Transaction.date" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Transaction.description" class="control-label">Description</label>
+            <input asp-for="Transaction.description" class="form-control" />
+            <span asp-validation-for="Transaction.description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Transaction.amount" class="control-label">Amount</label>
+            <input asp-for="Transaction.amount" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="Transaction.amount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

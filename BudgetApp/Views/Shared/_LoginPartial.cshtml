@@ -4,9 +4,14 @@
 @inject SignInManager<BudgetAppUser> SignInManager
 @inject UserManager<BudgetAppUser> UserManager
 
+
+
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
-{
+{   
+    <li class="nav-item">
+        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Dashboard">Dashboard</a>
+    </li>
     <li class="nav-item">
         <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
     </li>
